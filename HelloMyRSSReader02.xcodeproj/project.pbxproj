@@ -13,6 +13,8 @@
 		04B9CA5720295E5C0035C060 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B9CA5520295E5C0035C060 /* Main.storyboard */; };
 		04B9CA5920295E5E0035C060 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B9CA5820295E5E0035C060 /* Assets.xcassets */; };
 		04B9CA5C20295E5E0035C060 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B9CA5A20295E5E0035C060 /* LaunchScreen.storyboard */; };
+		04B9CA6520295E9C0035C060 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B9CA6420295E9C0035C060 /* Reachability.m */; };
+		04B9CA68202964830035C060 /* RSSDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9CA67202964830035C060 /* RSSDownloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		04B9CA5820295E5E0035C060 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04B9CA5B20295E5E0035C060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04B9CA5D20295E5E0035C060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04B9CA6320295E9B0035C060 /* HelloMyRSSReader02-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HelloMyRSSReader02-Bridging-Header.h"; sourceTree = "<group>"; };
+		04B9CA6420295E9C0035C060 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		04B9CA6620295EA60035C060 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		04B9CA67202964830035C060 /* RSSDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSDownloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +62,17 @@
 		04B9CA4E20295E5B0035C060 /* HelloMyRSSReader02 */ = {
 			isa = PBXGroup;
 			children = (
+				04B9CA6420295E9C0035C060 /* Reachability.m */,
+				04B9CA6620295EA60035C060 /* Reachability.h */,
 				04B9CA4F20295E5B0035C060 /* AppDelegate.swift */,
 				04B9CA5120295E5B0035C060 /* MasterViewController.swift */,
+				04B9CA67202964830035C060 /* RSSDownloader.swift */,
 				04B9CA5320295E5B0035C060 /* DetailViewController.swift */,
 				04B9CA5520295E5C0035C060 /* Main.storyboard */,
 				04B9CA5820295E5E0035C060 /* Assets.xcassets */,
 				04B9CA5A20295E5E0035C060 /* LaunchScreen.storyboard */,
 				04B9CA5D20295E5E0035C060 /* Info.plist */,
+				04B9CA6320295E9B0035C060 /* HelloMyRSSReader02-Bridging-Header.h */,
 			);
 			path = HelloMyRSSReader02;
 			sourceTree = "<group>";
@@ -99,6 +109,7 @@
 				TargetAttributes = {
 					04B9CA4B20295E5B0035C060 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -139,7 +150,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				04B9CA5420295E5C0035C060 /* DetailViewController.swift in Sources */,
+				04B9CA68202964830035C060 /* RSSDownloader.swift in Sources */,
 				04B9CA5220295E5B0035C060 /* MasterViewController.swift in Sources */,
+				04B9CA6520295E9C0035C060 /* Reachability.m in Sources */,
 				04B9CA5020295E5B0035C060 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +296,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4D5NWSFDJ2;
 				INFOPLIST_FILE = HelloMyRSSReader02/Info.plist;
@@ -290,8 +304,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.freya.HelloMyRSSReader02;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freya;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HelloMyRSSReader02/HelloMyRSSReader02-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -301,6 +317,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4D5NWSFDJ2;
 				INFOPLIST_FILE = HelloMyRSSReader02/Info.plist;
@@ -308,8 +325,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.freya.HelloMyRSSReader02;
+				PRODUCT_BUNDLE_IDENTIFIER = com.freya;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HelloMyRSSReader02/HelloMyRSSReader02-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
